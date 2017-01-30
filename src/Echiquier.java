@@ -2,11 +2,20 @@ import java.util.ArrayList;
 
 public class Echiquier {
 
+    private static Echiquier ourInstance = new Echiquier();
+
     private ArrayList<Piece> liste;
 
-    public Echiquier() {
 
-        this.liste = new ArrayList<>();
+    private Echiquier() {
+
+        this.liste = new ArrayList<>(); //Constructeur privée
+    }
+
+
+
+    public static Echiquier getInstance() {
+        return ourInstance;
     }
 
     public void ajouter(Piece varPiece) {
@@ -41,6 +50,8 @@ public class Echiquier {
         }
         System.out.println("    | A | B | C | D | E | F | G | H |");
     }
+
+
 
 
 }
